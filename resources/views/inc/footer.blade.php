@@ -1,5 +1,5 @@
-<footer class="sticky-bottom bg-white pt-3 pb-1">
-    <div class="footer__inner container">
+<footer class="pt-3 bg-white shadow-sm">
+    <div class="container">
         <p>© Буранов Алексей 2020</p>
     </div>
 </footer>

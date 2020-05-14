@@ -3,7 +3,6 @@
 @section('title') - {{$author->full_name}}@endsection
 
 @section('content')
-    @include('inc/header')
     <div class="outer d-flex flex-column justify-content-center bg-light" style="height: 100vh;">
         <div class="container">
             <div class="col-md-6 offset-md-3 mb-4 d-flex align-items-center">
@@ -18,5 +17,4 @@
             </div>
         </div>
     </div>
-    @include('inc/footer')
 @endsection

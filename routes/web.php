@@ -52,3 +52,7 @@ Route::prefix('/authors')->group(function () {
     Route::get('/{author}/edit', 'AuthorController@edit')->name('authors.edit');
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

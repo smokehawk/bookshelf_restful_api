@@ -9,7 +9,7 @@ class AuthorController extends Controller
     function index()
     {
         return view('authors.index', [
-            'authors' => Author::all()->sortBy('full_name'),
+            'authors' => Author::with('books')->get()->sortBy('full_name'),
         ]);
     }
 
@@ -20,28 +20,33 @@ class AuthorController extends Controller
 
     function create()
     {
+        $this->authorize('create');
         return view('authors.create');
     }
 
     function store()
     {
+        $this->authorize('create');
         Author::create($this->getValidAuthor());
         return redirect(route('authors.index'));
     }
 
     function edit(Author $author)
     {
+        $this->authorize('update');
         return view('authors.edit', compact('author'));
     }
 
     function update(Author $author)
     {
+        $this->authorize('update');
         $author->update($this->getValidAuthor());
         return redirect(route('authors.show', $author));
     }
 
     function delete(Author $author)
     {
+        $this->authorize('update');
         $author->delete();
         return redirect(route('authors.index'));
     }

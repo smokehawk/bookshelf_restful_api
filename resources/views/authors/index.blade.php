@@ -3,10 +3,19 @@
 @section('title') - Авторы@endsection
 
 @section('content')
-    @include('inc/header')
     <div class="inner bg-light">
         <div class="container">
             <h2 class="display-3 font-weight-normal text-center mb-3">Авторы</h2>
+            @can('create')
+                <div class="row">
+                    <a href="{{route('authors.create')}}" class="ml-auto mr-3 btn btn-dark">Добавить
+                        автора</a>
+                </div>
+                <hr>
+            @endcan
+            @can('update')
+                @php $can_update = true @endphp
+            @endcan
             <div class="row">
                 @forelse($authors as $author)
                     <div class="col-md-4 mb-4 d-flex align-items-stretch">
@@ -19,15 +28,21 @@
                                 <p class="card-text">Книг на полке: {{$author->books->count()}}</p>
                                 <a class="btn btn-info" href="{{route('authors.show',$author)}}"
                                    role="button">Подробнее</a>
+                                @if($can_update ?? '')
+                                    <a class="btn btn-secondary" href="{{route('authors.edit',$author)}}"
+                                       role="button">Редактировать</a>
+                                @endif
                             </div>
                         </div>
                     </div>
-                @empty <p>Авторов пока нет...</p>
+                @empty
+                    <div class="col-md-12 text-center">
+                        <p>Авторов пока нет...</p>
+                    </div>
                 @endforelse
             </div>
         </div>
     </div>
-    @include('inc/footer')
 @endsection
 
 

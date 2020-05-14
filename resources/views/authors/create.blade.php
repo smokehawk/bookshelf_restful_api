@@ -3,7 +3,6 @@
 @section('title') - Новый автор@endsection
 
 @section('content')
-    @include('inc\header')
     <div class="inner bg-light pt-3 pb-3">
         <div class="container">
             <h2 class="text-center">Новый автор</h2>
@@ -49,5 +48,4 @@
             </form>
         </div>
     </div>
-    @include('inc\footer')
 @endsection

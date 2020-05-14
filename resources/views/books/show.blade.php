@@ -3,7 +3,6 @@
 @section('title') - {{$book->title}}@endsection
 
 @section('content')
-    @include('inc/header')
     <div class="outer d-flex flex-column justify-content-center bg-light" style="height: 100vh;">
         <div class="container">
             <div class="card">
@@ -25,5 +24,4 @@
             </div>
         </div>
     </div>
-    @include('inc/footer')
 @endsection
