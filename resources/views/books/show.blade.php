@@ -3,7 +3,7 @@
 @section('title') - {{$book->title}}@endsection
 
 @section('content')
-    <div class="outer d-flex flex-column justify-content-center bg-light" style="height: 100vh;">
+    <div class="outer d-flex flex-column justify-content-center bg-light" style="height: 80vh;">
         <div class="container">
             <div class="card">
                 <div class="row no-gutters align-items-center">

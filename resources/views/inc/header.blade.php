@@ -18,6 +18,11 @@
                 <li class="nav-item {{Request::is('authors*')?'active':''}}">
                     <a class="nav-link" href="/authors">Авторы</a>
                 </li>
+                @can('useAdminPanel')
+                    <li class="nav-item {{Request::is('users*')?'active':''}}">
+                        <a class="nav-link" href="/users">Пользователи</a>
+                    </li>
+                @endcan
             </ul>
 
             <!-- Right Side Of Navbar -->

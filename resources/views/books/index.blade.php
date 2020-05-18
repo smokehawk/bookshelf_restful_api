@@ -6,17 +6,17 @@
     <div class="inner bg-light">
         <div class="container">
             <h2 class="display-3 font-weight-normal text-center mb-3 ">Книги</h2>
-            @can('create')
+            @canany(['updateContent','useAdminPanel'])
+                @php $can_update = true @endphp
+            @endcanany
+            @if($can_update ?? '')
                 <div class="row">
-                    <a href="{{route('authors.create')}}" class="ml-auto mr-3 btn btn-dark">Добавить
+                    <a href="{{route('books.create')}}" class="ml-auto mr-3 btn btn-dark">Добавить
                         книгу</a>
                 </div>
                 <hr>
-            @endcan
+            @endif
             <div class="row">
-                @can('update')
-                    @php $can_update = true @endphp
-                @endcan
                 @forelse($books as $book)
                     <div class="col-md-4 mb-4 d-flex align-items-stretch">
                         <div class="card">

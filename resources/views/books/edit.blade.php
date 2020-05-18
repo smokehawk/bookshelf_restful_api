@@ -68,7 +68,7 @@
                     <select
                         name="author_id"
                         id="author_id"
-                        class="form-control @error('published_at') {{'is-invalid'}}@enderror">
+                        class="form-control @error('author_id') {{'is-invalid'}}@enderror">
                         @foreach($authors as $author)
                             <option value="{{$author->id}}"
                                 {{$book->author_id === $author->id ? ' selected' : ''}}>

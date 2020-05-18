@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->unsignedBigInteger('author_id');
             $table->string('title');
             $table->string('annotation');
-            $table->date('published_at');
+            $table->date('published_at')->nullable();
             $table->timestamps();
 
             $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');

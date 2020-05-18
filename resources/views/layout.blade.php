@@ -97,7 +97,7 @@
 
 @includeUnless(Request::is('/'),'/inc/header')
 
-<main class="bg-light">
+<main class="bg-light @if(!Request::is('/')){{'py-4'}}@endif">
     @yield('content')
 </main>
 
