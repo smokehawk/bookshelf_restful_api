@@ -81,7 +81,11 @@
                 @csrf
                 @method('DELETE')
                 <div class="control">
-                    <button class="btn btn-danger" type="submit">Удалить</button>
+                    <button
+                        class="btn btn-danger"
+                        type="submit"
+                    @if($user->isAdmin()){{'disabled'}} @endif>Удалить
+                    </button>
                 </div>
             </form>
         </div>

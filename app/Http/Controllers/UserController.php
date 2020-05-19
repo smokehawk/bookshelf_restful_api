@@ -86,6 +86,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        abort_if($user->isAdmin(), 500, 'Cannot delete a user with role "admin"');
         $user->delete();
         return redirect(route('users.index'));
     }

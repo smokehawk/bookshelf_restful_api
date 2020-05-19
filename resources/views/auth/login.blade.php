@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <p class="text-center">Для просмотра контента необходимо войти в систему или зарегистрироваться</p>
                 <div class="card">
                     <div class="card-header">{{ __('Вход') }}</div>
 
